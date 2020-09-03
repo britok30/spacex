@@ -4,8 +4,7 @@ const {
     GraphQLString,
     GraphQLBoolean,
     GraphQLList,
-    GraphQLList,
-    GraphQlSchema,
+    GraphQLSchema,
 } = require('graphql');
 
 const axios = require('axios');
@@ -51,8 +50,6 @@ const RootQuery = new GraphQLObjectType({
     },
 });
 
-module.exports(
-    new GraphQlScheme({
-        query: RootQuery,
-    })
-);
+module.exports = new GraphQLSchema({
+    query: RootQuery,
+});
